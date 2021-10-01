@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class guest {
+    public static void main(String[] args) {
+        String [] guests = new String[10];
+        String [] status = new String[10];
+        Scanner scanner = new Scanner(System.in);
+        do {
+            System.out.println();
+            System.out.println(" 1 _ display the guest list ");
+            System.out.println(" 2 _ add guest");
+            System.out.println(" 3 _ remove guest");
+            System.out.println(" 4 - Exit ");
+            System.out.println(" 5 - status ");
+            System.out.println("option :");
+            System.out.println();
+
+            int option = scanner.nextInt();
+
+            if (option == 1) {
+                for (int i = 0; i < guests.length; i++) {
+                    System.out.println(guests[i]);
+                }
+            }
+           else if(option == 2){
+             for (int i = 0; i < guests.length; i++) {
+                if(guests[i] == null) {
+                    System.out.print("Name:");
+                            // fault : if I add nextline it will crush the system
+                    guests[i] =scanner.next();
+                    break;
+                }
+
+             }
+
+           }
+           else if (option==3){
+                System.out.println("name to be removed");
+                String name = scanner.next();
+                for(int i = 0 ; i <guests.length ; i++){
+                    if(guests[i] != null && guests[i].equals(name)){
+                       guests[i] = null ;
+                        break;
+                    }
+                }
+           }
+           else if(option == 5) {
+                // move the the secund array to top list
+                System.out.println("1 - write a guest status ");
+                System.out.println("2 - display status ");
+                // delete status
+                System.out.println("3 - delete status   ");
+                int secundoption = scanner.nextInt();
+                if (secundoption == 1) {
+                    Scanner statusone = new Scanner(System.in);
+                    for (int i = 0; i < status.length; i++) {
+
+                        if (status[i] == null) {
+                            System.out.println("write a status  ");
+                            String va = statusone.nextLine();
+
+                            status[i] = va;
+
+                            break;
+                        }
+                    }
+                } else if (secundoption == 2) {
+                    for (int i = 0; i < status.length; i++) {
+                        System.out.println(status[i]);
+                    }
+                }
+            }
+            else if(option==4){
+                break;
+            }
+
+        }while(true);
+        System.out.println("Exiting . . . . ");
+    }
+}

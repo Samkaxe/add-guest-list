@@ -19,7 +19,8 @@ public class guest {
 
             if (option == 1) {
                 for (int i = 0; i < guests.length; i++) {
-                    System.out.println(guests[i]);
+
+                    System.out.println(guests[i] == null ? "  " : guests[i]);
                 }
             }
            else if(option == 2){
@@ -66,7 +67,8 @@ public class guest {
                     }
                 } else if (secundoption == 2) {
                     for (int i = 0; i < status.length; i++) {
-                        System.out.println(status[i]);
+                       // System.out.println(status[i]);
+                        System.out.println(status[i] == null ? "  " : status[i]);
                     }
                 }
             }
@@ -74,7 +76,10 @@ public class guest {
                 break;
             }
 
+
         }while(true);
         System.out.println("Exiting . . . . ");
+
     }
+
 }
